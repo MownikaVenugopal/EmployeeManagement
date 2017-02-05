@@ -1,0 +1,74 @@
+﻿@model System.Collections.Generic.IEnumerable<EmployeeApp.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/styleSheet.css" rel="stylesheet" type="text/css" />
+
+<script type="text/x-jquery-tmpl">
+</script>
+
+<h2 id="indexid" class="indexcss">Index</h2>
+
+<div id="linkToAdd">
+<p>
+    @Html.ActionLink("Add", "Add","AddEmployee") 
+</p>
+ <span>@Html.ActionLink("Delete", "Delete", "AddEmployee")</span>  
+    
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Name")
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Gullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+
+    </tr>
+}
+
+</table>
+@section CustomScripts
+   {
+<script type="text/javascript">
+    $(document).ready(function(){
+      
+        $('.indexcss').text("Home Page");
+
+        $('#linkToAdd p').on('click', function () {
+           return confirm("Are you sure you want to Add");
+        }).css('width','20px');
+    });
+</script>}

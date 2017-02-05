@@ -1,0 +1,24 @@
+﻿.Highlight {
+        background-color : yellow;   
+    }
+.indexcss{
+     background-color: skyblue;
+     font-size: 25px;
+      width:800px;
+}
+body {
+}
+table{
+    background-color: lightgreen;
+    color : indianred;
+}
+p{
+    font-family: 'Monotype Corsiva';
+    font-size : larger;
+    width:auto;
+}
+span{
+    font-family:'Monotype Corsiva';
+    font-size:larger;
+    width:auto;
+}
